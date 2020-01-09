@@ -39,3 +39,5 @@ target_link_libraries(gl PUBLIC
     ${OPENGL_LIBRARIES}
     glfw
 )
+
+add_subdirectory(samples/simple)
