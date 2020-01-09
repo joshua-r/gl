@@ -1,9 +1,18 @@
 cmake_minimum_required(VERSION 3.2)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 project(gl)
+
+set(CMAKE_MODULE_PATH
+    ${CMAKE_MODULE_PATH}
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/cef-cmake/cmake
+)
 
 set(OpenGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)
@@ -21,6 +30,11 @@ include_directories(external/glad/include)
 
 # glm
 include_directories(external/glm)
+
+# download and build cef
+set(CEF_USE_SANDBOX OFF CACHE BOOL "Force turning off of sandbox")
+include(cef_cmake)
+add_subdirectory(external/cef-cmake)
 
 include_directories(src)
 add_library(gl
@@ -41,3 +55,4 @@ target_link_libraries(gl PUBLIC
 )
 
 add_subdirectory(samples/simple)
+add_subdirectory(samples/cef)
