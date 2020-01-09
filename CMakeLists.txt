@@ -33,6 +33,7 @@ add_library(gl
     src/texture.cpp
     src/texture2d.cpp
     src/vertex_array.cpp
+    src/window.cpp
 )
 target_link_libraries(gl PUBLIC
     ${OPENGL_LIBRARIES}
