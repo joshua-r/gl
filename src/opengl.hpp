@@ -11,6 +11,7 @@ namespace gl {
 
 constexpr GLuint INVALID_ID = std::numeric_limits<GLuint>::max();
 
-void init();
+bool init_glfw();
+bool init_opengl();
 
 }  // namespace gl
