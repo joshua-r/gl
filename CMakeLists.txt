@@ -24,8 +24,10 @@ include_directories(external/glm)
 
 include_directories(src)
 add_library(gl
+    external/glad/src/glad.c
     src/buffer.cpp
     src/framebuffer.cpp
+    src/opengl.cpp
     src/program.cpp
     src/shader.cpp
     src/texture.cpp
