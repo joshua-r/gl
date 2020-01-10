@@ -1,4 +1,6 @@
 [bB]uild/
+.vscode/
+GPUCache/
 
 ### https://raw.github.com/github/gitignore/7b46307743513585b362bb78fc2e2009a2cba587/C++.gitignore
 
