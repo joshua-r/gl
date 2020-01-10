@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <memory>
 
 #include <include/cef_app.h>
@@ -9,7 +10,7 @@
 
 class WebView : public CefClient, public CefLifeSpanHandler, public CefRenderHandler {
  public:
-  WebView();
+  WebView(unsigned int width, unsigned int height);
 
   virtual CefRefPtr<CefLifeSpanHandler> GetLifeSpanHandler() override;
   virtual CefRefPtr<CefRenderHandler> GetRenderHandler() override;
@@ -24,6 +25,7 @@ class WebView : public CefClient, public CefLifeSpanHandler, public CefRenderHan
                        int height) override;
   virtual void OnBeforeClose(CefRefPtr<CefBrowser> browser) override;
 
+  void resize(unsigned int width, unsigned int height);
   void bind_texture() const;
 
  private:
