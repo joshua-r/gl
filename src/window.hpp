@@ -30,6 +30,7 @@ class Window {
 
   const glm::vec2 screen_size() const;
   const glm::vec4 clear_color() const;
+  const glm::uvec2 resolution() const;
   bool should_close() const;
 
   void set_screen_size(const glm::vec2& size);

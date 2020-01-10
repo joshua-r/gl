@@ -112,6 +112,10 @@ const glm::vec4 Window::clear_color() const {
   return m_clear_color;
 }
 
+const glm::uvec2 Window::resolution() const {
+  return m_resolution;
+}
+
 bool Window::should_close() const {
   return glfwWindowShouldClose(m_window.get());
 }
